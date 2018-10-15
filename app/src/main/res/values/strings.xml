@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">JavaPDispatcher</string>
+    <string name="action_settings">Settings</string>
+    <string name="button_allow">允许</string>
+    <string name="button_deny">拒绝</string>
+
+    <string name="permission_camera_rationale">Camera permission 是相机预览必须的权限。</string>
+    <string name="permission_camera_denied">Camera permission 被拒绝，为了访问相机功能，请授权此权限。</string>
+    <string name="permission_camera_never_ask_again">Camera permission 被设置永远不提示开启</string>
+
+    <string name="permission_storage_denied">Storage permission 被拒绝，为了访问文件，请授权此权限。</string>
+    <string name="permission_storage_rationale">Storage permission 是访问文件必须的权限。</string>
+    <string name="permission_storage_never_ask_again">Storage permission 被设置永远不提示开启</string>
+</resources>
