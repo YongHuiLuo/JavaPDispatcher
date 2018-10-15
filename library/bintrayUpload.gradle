@@ -1,11 +1,42 @@
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
+def siteUrl = 'https://github.com/YongHuiLuo/JavaPDispatcher/tree/master'
+def gitUrl = 'https://github.com/YongHuiLuo/JavaPDispatcher.git'
+
+group = "com.luoyonghui"
 version = "1.0.0"
 
-def siteUrl = ''
+install {
+    repositories.mavenInstaller {
+        pom {
+            project {
+                packaging 'aar'
+                name 'android permission library'
+                url siteUrl
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        name "luoyonghui"
+                        email "luoyonghui7723@gmail.com"
+                    }
+                }
+                scm {
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+                }
+            }
+        }
+    }
+}
 
-task sourceJar(type: Jar) {
+task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
     classifier = 'sources'
 }
@@ -15,7 +46,7 @@ task javadoc(type: Javadoc) {
     classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
 }
 
-task javadocjar(type: Jar, dependsOn: javadoc) {
+task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'
     from javadoc.destinationDir
 }
@@ -34,8 +65,18 @@ bintray {
     configurations = ['archives']
 
     pkg {
-        repo="maven"
-        name="JavaPDispatcher"
-        websiteUrl = ""
+        repo = "maven"
+        name = "JavaPDispatcher"
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = ["Apache-2.0"]
+        publish = true
+    }
+}
+
+javadoc {
+    options {
+        encoding "UTF-8"
+        charSet 'UTF-8'
     }
 }
