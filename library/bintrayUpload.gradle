@@ -4,7 +4,7 @@ apply plugin: 'com.jfrog.bintray'
 def siteUrl = 'https://github.com/YongHuiLuo/JavaPDispatcher/tree/master'
 def gitUrl = 'https://github.com/YongHuiLuo/JavaPDispatcher.git'
 
-group = "com.luoyonghui"
+group = "com.luoyonghui:JavaPDispatcher"
 version = "1.0.0"
 
 install {
