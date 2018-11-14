@@ -1,11 +1,11 @@
 # JavaPDispatcher
 
-为Android 动态权限申请提供基于注解实现的类库，方便开发者使用尽可能少的代码对Android 动态权限进行适配。
+为Android 动态权限申请提供基于注解实现的类库，方便开发者使用尽可能少的代码对Android 动态权限进行适配。如果您的项目中没有添加Kotlin支持库，那么这个动态权限申请库将非常适合你。此开源库完全通过Java代码实现。
 
 
 # Use Example
 
-被**RuntimePermissions** 修饰的类，在程序编译的过程中，才会自动生成授权代码；
+被**RuntimePermissions** 修饰的类，在程序编译的过程中，才会自动生成授权代码；<br>
 被**NeedsPermission** 修饰的方法，在权限成功赋予之后执行，支持函数参数的传递。
 
 ```
