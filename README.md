@@ -5,7 +5,7 @@
 
 # Use Example
 
-被**RuntimePermissions** 修饰的类，在程序编译的过程中，才会自动更新
+被**RuntimePermissions** 修饰的类，在程序编译的过程中，才会自动生成授权代码；
 被**NeedsPermission** 修饰的方法，在权限成功赋予之后执行，支持函数参数的传递。
 
 ```
