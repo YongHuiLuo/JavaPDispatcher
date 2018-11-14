@@ -1,6 +1,12 @@
 # JavaPDispatcher
 
-为Android 动态权限申请提供基于注解实现的类库，方便开发者使用尽可能少的代码对Android 动态权限进行适配。如果您的项目中没有添加Kotlin支持库，那么这个动态权限申请库将非常适合你。此开源库完全通过Java代码实现。
+为Android 动态权限申请提供基于注解实现的类库，方便开发者使用尽可能少的代码对Android 动态权限进行适配。<br>
+Provides an annotation-based implementation class library for Android dynamic permission requests, which allows developers to adapt Android dynamic permissions with as little code as possible.<br>
+
+
+# 使用场景
+如果您的项目中没有添加Kotlin支持库，那么这个动态权限申请库将非常适合你。此开源库完全通过Java代码实现；<br>
+学习任何使用注解简化重复代码开发；<br>
 
 
 # Use Example
