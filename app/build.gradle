@@ -28,6 +28,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    implementation project(':library')
-    annotationProcessor project(':processor')
+
+    implementation 'com.github.luoyonghui:javapdispatcher:0.0.1'
+    annotationProcessor 'com.github.luoyonghui:javapdispatcher-processor:0.0.1'
 }

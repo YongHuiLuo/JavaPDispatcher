@@ -46,7 +46,6 @@ public class PermissionsProcessor extends AbstractProcessor {
         messager = processingEnv.getMessager();
         ELEMENT_UTILS = processingEnv.getElementUtils();
         TYPE_UTILS = processingEnv.getTypeUtils();
-        System.out.println("你好  你好   你好 ");
     }
 
     public static Elements getElementUtils() {

@@ -27,7 +27,7 @@ import android.widget.FrameLayout;
 
 import com.permission.javapdispatcher.R;
 
-public class CameraPreviewActivity extends Activity {
+public class CameraActivity extends Activity {
 
     private static final String TAG = "CameraPreview";
 

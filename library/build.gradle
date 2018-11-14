@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 28
@@ -31,4 +32,11 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
 
-apply from: 'bintrayUpload.gradle'
+publish {
+    userOrg = 'yonghuiluo'
+    groupId = 'com.github.luoyonghui'
+    artifactId = 'javapdispatcher'
+    publishVersion = '0.0.1'
+    desc = 'Simple annotation-based API to handle runtime permissions. '
+    website = 'https://github.com/YongHuiLuo/JavaPDispatcher'
+}
