@@ -1,0 +1,23 @@
+ext {
+    bintrayRepo = 'JavaPDispatcher'
+    bintrayName = 'JavaPDispatcher'
+
+    publishedGroupId = GROUP
+    libraryName = POM_ARTIFACT_ID
+    artifact = POM_ARTIFACT_ID
+
+    libraryDescription = POM_DESCRIPTION
+
+    siteUrl = POM_URL
+    gitUrl = POM_SCM_CONNECTION
+
+    libraryVersion = VERSION_NAME
+
+    developerId = POM_DEVELOPER_ID
+    developerName = POM_DEVELOPER_NAME
+    developerEmail = POM_DEVELOPER_EMAIL
+
+    licenseName = POM_LICENCE_NAME
+    licenseUrl = POM_LICENCE_URL
+    allLicenses = ["Apache-2.0"]
+}

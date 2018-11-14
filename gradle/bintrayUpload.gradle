@@ -1,0 +1,148 @@
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+def siteUrl = 'https://github.com/YongHuiLuo/JavaPDispatcher/tree/master'
+def gitUrl = 'https://github.com/YongHuiLuo/JavaPDispatcher.git'
+
+if (project.getPlugins().hasPlugin('com.android.application') ||
+        project.getPlugins().hasPlugin('com.android.library')) {
+
+    install() {
+        repositories.mavenInstaller {
+            configuration = configurations.archives
+
+            pom.groupId = GROUP
+            pom.artifactId = POM_ARTIFACT_ID
+            pom.version = VERSION_NAME
+
+            pom.project {
+                name POM_NAME
+                packaging POM_PACKAGING
+                description POM_DESCRIPTION
+                url POM_URL
+
+                scm {
+                    url POM_SCM_URL
+                    connection POM_SCM_CONNECTION
+                    developerConnection POM_SCM_DEV_CONNECTION
+                }
+
+                licenses {
+                    license {
+                        name POM_LICENCE_NAME
+                        url POM_LICENCE_URL
+                        distribution POM_LICENCE_DIST
+                    }
+                }
+
+                developers {
+                    developer {
+                        id POM_DEVELOPER_ID
+                        name POM_DEVELOPER_NAME
+                    }
+                }
+            }
+        }
+    }
+
+    task sourcesJar(type: Jar) {
+        from android.sourceSets.main.java.srcDirs
+        classifier = 'sources'
+    }
+
+    task javadoc(type: Javadoc) {
+        source = android.sourceSets.main.java.srcDirs
+        print("hahhaha")
+        classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    }
+
+    task javadocJar(type: Jar, dependsOn: javadoc) {
+        classifier = 'javadoc'
+        from javadoc.destinationDir
+    }
+
+} else {
+    install {
+        repositories.mavenInstaller {
+            pom.groupId = GROUP
+            pom.artifactId = POM_ARTIFACT_ID
+            pom.version = VERSION_NAME
+
+            pom.project {
+                name POM_NAME
+                packaging POM_PACKAGING
+                description POM_DESCRIPTION
+                url POM_URL
+
+                scm {
+                    url POM_SCM_URL
+                    connection POM_SCM_CONNECTION
+                    developerConnection POM_SCM_DEV_CONNECTION
+                }
+
+                licenses {
+                    license {
+                        name POM_LICENCE_NAME
+                        url POM_LICENCE_URL
+                        distribution POM_LICENCE_DIST
+                    }
+                }
+
+                developers {
+                    developer {
+                        id POM_DEVELOPER_ID
+                        name POM_DEVELOPER_NAME
+                    }
+                }
+            }
+        }
+    }
+
+    task sourcesJar(type: Jar, dependsOn:classes) {
+        classifier = 'sources'
+        from sourceSets.main.allSource
+    }
+
+    task javadocJar(type: Jar, dependsOn:javadoc) {
+        classifier = 'javadoc'
+        from javadoc.destinationDir
+    }
+}
+
+if (JavaVersion.current().isJava8Compatible()) {
+    allprojects {
+        tasks.withType(Javadoc) {
+            options.addStringOption('Xdoclint:none', '-quiet')
+        }
+    }
+}
+
+artifacts {
+    if (project.getPlugins().hasPlugin('com.android.application') ||
+            project.getPlugins().hasPlugin('com.android.library')) {
+        archives sourcesJar
+        archives javadocJar
+        print("artifacts  library")
+    } else {
+        archives javadocJar
+        archives sourcesJar
+    }
+}
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+    configurations = ['archives']
+
+    pkg {
+        repo = "maven"
+        name = "JavaPDispatcher"
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = ["Apache-2.0"]
+        publish = true
+    }
+}

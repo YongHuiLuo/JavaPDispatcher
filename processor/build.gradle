@@ -1,4 +1,7 @@
 apply plugin: 'java-library'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+apply from: '../install.gradle'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -8,3 +11,6 @@ dependencies {
 
 sourceCompatibility = "1.7"
 targetCompatibility = "1.7"
+
+
+apply from: '../bintray.gradle'
