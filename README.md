@@ -5,14 +5,22 @@ Provides an annotation-based implementation class library for Android dynamic pe
 
 
 # 使用场景
-如果您的项目中没有添加Kotlin支持库，那么这个动态权限申请库将非常适合你。此开源库完全通过Java代码实现；<br>
-学习任何使用注解简化重复代码开发；<br>
+1. 如果您的项目中没有引入Kotlin支持库，那么**JavaPDispatcher**将非常适合你的项目，此开源库完全通过Java代码实现；<br>
+If you don't have a Kotlin support library in your project, then **JavaPDispatcher** will work great for your project. This open source library is completely implemented in Java code;<br>
+2. 学习任何使用注解简化重复代码开发；<br>
+Learn to use annotations to simplify repetitive code development;<br>
 
 
 # Use Example
 
-被**RuntimePermissions** 修饰的类，在程序编译的过程中，才会自动生成授权代码；<br>
-被**NeedsPermission** 修饰的方法，在权限成功赋予之后执行，支持函数参数的传递。
+注解解释：
+
+RuntimePermissions: 注册需要权限操作的 Activity或者Fragment (Register an Activity or Fragment that requires permission to operate)<br>
+NeedsPermission: 注册需要权限的方法，支持参数传递；(Register a method that requires permission, Support for passing method parameters) <br>
+OnDenied: 注册拒绝授予权限时执行的方法； (Registration method for denying permission)<br>
+OnRationale： 注册展示自定义解释弹窗的方法； （Register a method that shows the custom permission rationale popup） <br>
+OnNeverAsk： 注册点击不在询问后提示用户的方法； （Register a method that click is not asking for a prompt） <br>
+
 
 ```
 @RuntimePermissions
