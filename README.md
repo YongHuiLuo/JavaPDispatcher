@@ -11,6 +11,19 @@ If you don't have a Kotlin support library in your project, then **JavaPDispatch
 2. 学习任何使用注解简化重复代码开发；<br>
 Learn to use annotations to simplify repetitive code development;<br>
 
+# Download
+
+To add JavaPDispatcher to your project, include the following in your app module build.gradle file:
+
+${latest.version} is  download  **0.0.1**
+
+```
+dependencies {
+    implementation 'com.github.luoyonghui:javapdispatcher:${latest.version}'
+    annotationProcessor 'com.github.luoyonghui:javapdispatcher-processor:${latest.version}'
+}
+```
+
 
 # Use Example
 
@@ -96,16 +109,8 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
+# License
 
-# Download
+This plugin is available under the Apache License, Version 2.0.
 
-To add JavaPDispatcher to your project, include the following in your app module build.gradle file:
-
-${latest.version} is  download  **0.0.1**
-
-```
-dependencies {
-    implementation 'com.github.luoyonghui:javapdispatcher:${latest.version}'
-    annotationProcessor 'com.github.luoyonghui:javapdispatcher-processor:${latest.version}'
-}
-```
+(c) All rights reserved JFrog
