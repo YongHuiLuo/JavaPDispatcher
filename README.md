@@ -113,4 +113,4 @@ public class MainActivity extends AppCompatActivity {
 
 This plugin is available under the Apache License, Version 2.0.
 
-(c) All rights reserved JFrog
+(c) All rights reserved luoyonghui 
